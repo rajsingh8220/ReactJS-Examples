@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example: Composing Components</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        function Welcome(props) {
+            return <h1>Hello, {props.name}---{props.val}</h1>;
+          }
+
+          function App(aaa) {
+            return (
+              <div>
+                <h3>Main App : {aaa.app_name}</h3>
+                <Welcome name="Sara" val="1" />
+                <Welcome name="Cahal" val="2" />
+                <Welcome name="Edite" val="3" />
+              </div>
+            );
+          }
+
+          ReactDOM.render(
+            <App app_name="my name is ...." />,
+            document.getElementById('root')
+          );
+    </script>
+  </body>
+</html>
